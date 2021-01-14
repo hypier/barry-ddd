@@ -10,4 +10,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * Description:
  */
 public interface JpaTradeRepository extends JpaRepository<TradeRecord, Integer> {
+
+    TradeRecord findFirstByTradeNumber(String tradeNumber);
 }

@@ -1,6 +1,7 @@
 package fun.barryhome.ddd.domain.model;
 
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import fun.barryhome.ddd.domain.enums.InOutFlag;
 import fun.barryhome.ddd.domain.enums.TradeStatus;
 import fun.barryhome.ddd.domain.enums.TradeType;
@@ -26,6 +27,7 @@ import java.util.List;
 @Table
 @AllArgsConstructor
 @NoArgsConstructor
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class TradeRecord extends BaseEntity {
 
     @Id

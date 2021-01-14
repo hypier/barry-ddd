@@ -1,6 +1,7 @@
 package fun.barryhome.ddd.domain.model;
 
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import fun.barryhome.ddd.domain.enums.WalletStatus;
 import lombok.*;
 
@@ -20,6 +21,7 @@ import java.math.BigDecimal;
 @Table
 @AllArgsConstructor
 @NoArgsConstructor
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Wallet extends BaseEntity {
 
     /**
