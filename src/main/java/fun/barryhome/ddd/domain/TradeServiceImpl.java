@@ -6,8 +6,8 @@ import fun.barryhome.ddd.domain.enums.TradeType;
 import fun.barryhome.ddd.domain.enums.WalletStatus;
 import fun.barryhome.ddd.domain.model.TradeRecord;
 import fun.barryhome.ddd.domain.model.Wallet;
-import fun.barryhome.ddd.infrastructure.TradeRepository;
-import fun.barryhome.ddd.infrastructure.WalletRepository;
+import fun.barryhome.ddd.infrastructure.trade.TradeRepository;
+import fun.barryhome.ddd.infrastructure.wallet.WalletRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -38,7 +38,10 @@ public class TradeServiceImpl implements TradeService {
     @Override
     public TradeRecord recharge(TradeRecord tradeRecord) {
 
-        Wallet wallet = walletRepository.findById(tradeRecord.getWallet().getWalletId()).orElseThrow(() -> new RuntimeException("钱包不存在"));
+        Wallet wallet = walletRepository.findById(tradeRecord.getWallet().getWalletId());
+        if (wallet == null){
+            throw new RuntimeException("钱包不存在");
+        }
 
         if (wallet.getWalletStatus().equals(WalletStatus.DESTROYED)) {
             throw new RuntimeException("钱包状态不可用");
@@ -70,7 +73,10 @@ public class TradeServiceImpl implements TradeService {
     @Override
     public TradeRecord consume(TradeRecord tradeRecord) {
 
-        Wallet wallet = walletRepository.findById(tradeRecord.getWallet().getWalletId()).orElseThrow(() -> new RuntimeException("钱包不存在"));
+        Wallet wallet = walletRepository.findById(tradeRecord.getWallet().getWalletId());
+        if (wallet == null){
+            throw new RuntimeException("钱包不存在");
+        }
 
         if (!wallet.getWalletStatus().equals(WalletStatus.AVAILABLE)) {
             throw new RuntimeException("钱包状态不可用");

@@ -1,7 +1,7 @@
 package fun.barryhome.ddd.controller;
 
 import fun.barryhome.ddd.domain.model.Wallet;
-import fun.barryhome.ddd.infrastructure.WalletRepository;
+import fun.barryhome.ddd.infrastructure.wallet.WalletRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -33,7 +33,7 @@ public class WalletController {
      */
     @GetMapping(path = "/{walletId}")
     public Wallet findOne(@PathVariable("walletId") String walletId) {
-        return walletRepository.findById(walletId).orElse(null);
+        return walletRepository.findById(walletId);
     }
 
     /**
