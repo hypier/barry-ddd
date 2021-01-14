@@ -1,9 +1,9 @@
 package fun.barryhome.ddd.infrastructure.trade;
 
-import fun.barryhome.ddd.constant.MessageConstant;
 import fun.barryhome.ddd.domain.event.TradeEvent;
 import fun.barryhome.ddd.domain.model.TradeRecord;
-import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import fun.barryhome.ddd.infrastructure.jpa.JpaTradeRepository;
+import fun.barryhome.ddd.infrastructure.mq.RabbitMQSender;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -15,13 +15,13 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class TradeRepositoryImpl implements TradeRepository {
 
-    private final RabbitTemplate rabbitTemplate;
-
     private final JpaTradeRepository jpaTradeRepository;
 
-    public TradeRepositoryImpl(RabbitTemplate rabbitTemplate, JpaTradeRepository jpaTradeRepository) {
-        this.rabbitTemplate = rabbitTemplate;
+    private final RabbitMQSender rabbitMQSender;
+
+    public TradeRepositoryImpl(JpaTradeRepository jpaTradeRepository, RabbitMQSender rabbitMQSender) {
         this.jpaTradeRepository = jpaTradeRepository;
+        this.rabbitMQSender = rabbitMQSender;
     }
 
     @Override
@@ -36,7 +36,7 @@ public class TradeRepositoryImpl implements TradeRepository {
     @Override
     public void sendMQEvent(TradeEvent tradeEvent) {
         // 发送消息
-        rabbitTemplate.convertAndSend(MessageConstant.MESSAGE_EXCHANGE, MessageConstant.tradeEventRoutingKey(tradeEvent), tradeEvent);
+        rabbitMQSender.sendMQTradeEvent(tradeEvent);
     }
 
 

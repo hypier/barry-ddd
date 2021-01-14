@@ -1,6 +1,7 @@
 package fun.barryhome.ddd.infrastructure.wallet;
 
 import fun.barryhome.ddd.domain.model.Wallet;
+import fun.barryhome.ddd.infrastructure.jpa.JpaWalletRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -32,6 +33,6 @@ public class WalletRepositoryImpl implements WalletRepository {
 
     @Override
     public List<Wallet> findAll() {
-        return null;
+        return jpaWalletRepository.findAll();
     }
 }

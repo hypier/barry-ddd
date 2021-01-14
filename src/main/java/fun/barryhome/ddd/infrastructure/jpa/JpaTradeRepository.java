@@ -1,4 +1,4 @@
-package fun.barryhome.ddd.infrastructure.trade;
+package fun.barryhome.ddd.infrastructure.jpa;
 
 import fun.barryhome.ddd.domain.model.TradeRecord;
 import org.springframework.data.jpa.repository.JpaRepository;

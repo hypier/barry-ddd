@@ -1,4 +1,4 @@
-package fun.barryhome.ddd.infrastructure.wallet;
+package fun.barryhome.ddd.infrastructure.jpa;
 
 import fun.barryhome.ddd.domain.model.Wallet;
 import org.springframework.data.jpa.repository.JpaRepository;

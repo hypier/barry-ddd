@@ -7,12 +7,14 @@ import fun.barryhome.ddd.domain.model.TradeRecord;
 import lombok.Getter;
 import lombok.ToString;
 
+import java.io.Serializable;
+
 /**
  * Created by heyong on 2017/2/23 12:09.
  */
 @ToString
 @Getter
-public class TradeEvent {
+public class TradeEvent implements Serializable {
 
     private final TradeRecord tradeRecord;
     private final TradeStatus tradeStatus;

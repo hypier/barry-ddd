@@ -15,6 +15,7 @@ public class TradeMQReceiver {
 
     @RabbitListener(queues = "ddd-trade-succeed")
     public void receiveTradeMessage(TradeEvent tradeEvent){
+        System.err.println("========MQ Receiver============");
         System.err.println(tradeEvent);
     }
 
