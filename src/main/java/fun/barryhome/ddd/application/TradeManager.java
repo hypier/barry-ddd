@@ -3,7 +3,6 @@ package fun.barryhome.ddd.application;
 import fun.barryhome.ddd.domain.TradeService;
 import fun.barryhome.ddd.domain.model.TradeRecord;
 import org.apache.logging.log4j.util.Strings;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -16,8 +15,11 @@ import org.springframework.transaction.annotation.Transactional;
 @Component
 public class TradeManager {
 
-    @Autowired
-    private TradeService tradeService;
+    private final TradeService tradeService;
+
+    public TradeManager(TradeService tradeService) {
+        this.tradeService = tradeService;
+    }
 
     /**
      * 充值

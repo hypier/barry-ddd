@@ -1,4 +1,4 @@
-package fun.barryhome.ddd.controller;
+package fun.barryhome.ddd.controller.dto;
 
 import fun.barryhome.ddd.domain.enums.TradeStatus;
 import fun.barryhome.ddd.domain.enums.TradeType;

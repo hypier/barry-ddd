@@ -2,6 +2,7 @@ package fun.barryhome.ddd.controller;
 
 
 import fun.barryhome.ddd.application.TradeManager;
+import fun.barryhome.ddd.controller.dto.TradeDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

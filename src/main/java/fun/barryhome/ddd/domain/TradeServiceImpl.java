@@ -8,7 +8,6 @@ import fun.barryhome.ddd.domain.model.TradeRecord;
 import fun.barryhome.ddd.domain.model.Wallet;
 import fun.barryhome.ddd.infrastructure.trade.TradeRepository;
 import fun.barryhome.ddd.infrastructure.wallet.WalletRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -23,11 +22,14 @@ import java.util.UUID;
 @Service
 public class TradeServiceImpl implements TradeService {
 
-    @Autowired
-    private WalletRepository walletRepository;
+    private final WalletRepository walletRepository;
 
-    @Autowired
-    private TradeRepository tradeRepository;
+    private final TradeRepository tradeRepository;
+
+    public TradeServiceImpl(WalletRepository walletRepository, TradeRepository tradeRepository) {
+        this.walletRepository = walletRepository;
+        this.tradeRepository = tradeRepository;
+    }
 
     /**
      * 充值

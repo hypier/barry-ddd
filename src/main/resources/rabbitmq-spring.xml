@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rabbit="http://www.springframework.org/schema/rabbit"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/rabbit http://www.springframework.org/schema/rabbit/spring-rabbit.xsd">
+
+    <!--接收消息的队列名-->
+    <rabbit:queue name="ddd-trade-succeed"/>
+
+    <!--申明exchange的名称与类型-->
+    <rabbit:topic-exchange name="fun.barryhome.ddd">
+        <rabbit:bindings>
+            <!--queue与exchange的绑定和匹配路由-->
+            <rabbit:binding queue="ddd-trade-succeed" pattern="trade.*.succeed"/>
+        </rabbit:bindings>
+    </rabbit:topic-exchange>
+</beans>

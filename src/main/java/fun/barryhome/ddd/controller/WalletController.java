@@ -2,7 +2,6 @@ package fun.barryhome.ddd.controller;
 
 import fun.barryhome.ddd.domain.model.Wallet;
 import fun.barryhome.ddd.infrastructure.wallet.WalletRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,8 +16,11 @@ import java.util.List;
 @RestController
 public class WalletController {
 
-    @Autowired
-    private WalletRepository walletRepository;
+    private final WalletRepository walletRepository;
+
+    public WalletController(WalletRepository walletRepository) {
+        this.walletRepository = walletRepository;
+    }
 
     @PostMapping()
     public Wallet save(@RequestBody Wallet wallet) {
