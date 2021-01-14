@@ -25,5 +25,5 @@ public enum TradeStatus {
     /**
      * 作废
      */
-    CANCELED;
+    CANCELED
 }

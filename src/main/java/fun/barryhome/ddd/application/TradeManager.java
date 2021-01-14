@@ -2,7 +2,6 @@ package fun.barryhome.ddd.application;
 
 import fun.barryhome.ddd.domain.TradeService;
 import fun.barryhome.ddd.domain.model.TradeRecord;
-import fun.barryhome.ddd.dto.TradeDTO;
 import org.apache.logging.log4j.util.Strings;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -23,32 +22,30 @@ public class TradeManager {
     /**
      * 充值
      *
-     * @param tradeDTO
+     * @param tradeRecord
      * @return
      */
     @Transactional(rollbackFor = Exception.class)
-    public TradeDTO recharge(TradeDTO tradeDTO) {
-        TradeRecord tradeRecord = tradeDTO.toEntity();
+    public TradeRecord recharge(TradeRecord tradeRecord) {
         if (tradeRecord.getWallet() == null || Strings.isEmpty(tradeRecord.getWallet().getWalletId())) {
             throw new RuntimeException("参数错误");
         }
 
-        return TradeDTO.toDto(tradeService.recharge(tradeRecord));
+        return tradeService.recharge(tradeRecord);
     }
 
     /**
      * 消费
      *
-     * @param tradeDTO
+     * @param tradeRecord
      * @return
      */
     @Transactional(rollbackFor = Exception.class)
-    public TradeDTO consume(TradeDTO tradeDTO) {
-        TradeRecord tradeRecord = tradeDTO.toEntity();
+    public TradeRecord consume(TradeRecord tradeRecord) {
         if (tradeRecord.getWallet() == null || Strings.isEmpty(tradeRecord.getWallet().getWalletId())) {
             throw new RuntimeException("参数错误");
         }
 
-        return TradeDTO.toDto(tradeService.consume(tradeRecord));
+        return tradeService.consume(tradeRecord);
     }
 }

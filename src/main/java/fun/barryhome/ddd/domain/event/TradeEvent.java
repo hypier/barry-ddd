@@ -18,7 +18,7 @@ public class TradeEvent {
     private final TradeStatus tradeStatus;
     private final TradeType tradeType;
 
-    public TradeEvent(TradeRecord tradeRecord){
+    public TradeEvent(TradeRecord tradeRecord) {
         this.tradeRecord = tradeRecord;
         this.tradeStatus = tradeRecord.getTradeStatus();
         this.tradeType = tradeRecord.getTradeType();

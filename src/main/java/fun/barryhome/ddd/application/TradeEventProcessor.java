@@ -15,7 +15,7 @@ import org.springframework.transaction.event.TransactionalEventListener;
 public class TradeEventProcessor {
 
     @TransactionalEventListener(phase = TransactionPhase.AFTER_COMMIT, condition = "# tradeEvent.tradeStatus.name() == 'SUCCEED'")
-    public void TradeSucceed(TradeEvent tradeEvent)  {
-       System.err.println(tradeEvent);
+    public void TradeSucceed(TradeEvent tradeEvent) {
+        System.err.println(tradeEvent);
     }
 }

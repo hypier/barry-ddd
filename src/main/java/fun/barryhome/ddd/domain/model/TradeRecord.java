@@ -26,7 +26,7 @@ import java.util.List;
 @Table
 @AllArgsConstructor
 @NoArgsConstructor
-public class TradeRecord extends BaseEntity{
+public class TradeRecord extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -74,7 +74,7 @@ public class TradeRecord extends BaseEntity{
     private String sourceNumber;
 
     @DomainEvents
-    public List<Object> domainEvents(){
+    public List<Object> domainEvents() {
         return Collections.singletonList(new TradeEvent(this));
     }
 }

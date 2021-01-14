@@ -2,7 +2,6 @@ package fun.barryhome.ddd.controller;
 
 
 import fun.barryhome.ddd.application.TradeManager;
-import fun.barryhome.ddd.dto.TradeDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -23,12 +22,12 @@ public class TradeController {
     private TradeManager tradeManager;
 
     @PostMapping(path = "/recharge")
-    public TradeDTO recharge(@RequestBody TradeDTO tradeDTO){
-        return tradeManager.recharge(tradeDTO);
+    public TradeDTO recharge(@RequestBody TradeDTO tradeDTO) {
+        return TradeDTO.toDto(tradeManager.recharge(tradeDTO.toEntity()));
     }
 
     @PostMapping(path = "/consume")
-    public TradeDTO consume(@RequestBody TradeDTO tradeDTO){
-        return tradeManager.consume(tradeDTO);
+    public TradeDTO consume(@RequestBody TradeDTO tradeDTO) {
+        return TradeDTO.toDto(tradeManager.consume(tradeDTO.toEntity()));
     }
 }

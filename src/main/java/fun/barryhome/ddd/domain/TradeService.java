@@ -12,6 +12,7 @@ public interface TradeService {
 
     /**
      * 充值
+     *
      * @param tradeRecord
      * @return
      */
@@ -19,6 +20,7 @@ public interface TradeService {
 
     /**
      * 消费
+     *
      * @param tradeRecord
      * @return
      */

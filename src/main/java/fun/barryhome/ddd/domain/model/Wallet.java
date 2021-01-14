@@ -20,7 +20,7 @@ import java.math.BigDecimal;
 @Table
 @AllArgsConstructor
 @NoArgsConstructor
-public class Wallet extends BaseEntity{
+public class Wallet extends BaseEntity {
 
     /**
      * 钱包ID
