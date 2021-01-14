@@ -31,7 +31,6 @@ public abstract class BaseEntity implements Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     @JsonIgnore
-    @Getter(AccessLevel.PRIVATE)
     @Setter(AccessLevel.PRIVATE)
     private Date createTime;
 
@@ -41,7 +40,6 @@ public abstract class BaseEntity implements Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     @JsonIgnore
-    @Getter(AccessLevel.PRIVATE)
     @Setter(AccessLevel.PRIVATE)
     private Date updateTime;
 

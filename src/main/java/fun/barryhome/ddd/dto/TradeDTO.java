@@ -4,8 +4,10 @@ import fun.barryhome.ddd.domain.enums.TradeStatus;
 import fun.barryhome.ddd.domain.enums.TradeType;
 import fun.barryhome.ddd.domain.model.TradeRecord;
 import fun.barryhome.ddd.domain.model.Wallet;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.beans.BeanUtils;
 
 import java.math.BigDecimal;
@@ -19,6 +21,8 @@ import java.util.Date;
  */
 @Data
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class TradeDTO {
 
     /**
