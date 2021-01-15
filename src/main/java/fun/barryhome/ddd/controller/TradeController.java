@@ -4,7 +4,7 @@ package fun.barryhome.ddd.controller;
 import fun.barryhome.ddd.application.TradeManager;
 import fun.barryhome.ddd.controller.dto.TradeDTO;
 import fun.barryhome.ddd.domain.model.TradeRecord;
-import fun.barryhome.ddd.domain.TradeRepository;
+import fun.barryhome.ddd.domain.repository.TradeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

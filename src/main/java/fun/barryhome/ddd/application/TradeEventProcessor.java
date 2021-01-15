@@ -1,7 +1,7 @@
 package fun.barryhome.ddd.application;
 
 import fun.barryhome.ddd.domain.event.TradeEvent;
-import fun.barryhome.ddd.domain.TradeRepository;
+import fun.barryhome.ddd.domain.repository.TradeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.event.TransactionPhase;

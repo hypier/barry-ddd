@@ -6,6 +6,8 @@ import fun.barryhome.ddd.domain.enums.TradeType;
 import fun.barryhome.ddd.domain.enums.WalletStatus;
 import fun.barryhome.ddd.domain.model.TradeRecord;
 import fun.barryhome.ddd.domain.model.Wallet;
+import fun.barryhome.ddd.domain.repository.TradeRepository;
+import fun.barryhome.ddd.domain.repository.WalletRepository;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;

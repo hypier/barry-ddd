@@ -1,6 +1,6 @@
-package fun.barryhome.ddd.infrastructure.trade;
+package fun.barryhome.ddd.infrastructure;
 
-import fun.barryhome.ddd.domain.TradeRepository;
+import fun.barryhome.ddd.domain.repository.TradeRepository;
 import fun.barryhome.ddd.domain.event.TradeEvent;
 import fun.barryhome.ddd.domain.model.TradeRecord;
 import fun.barryhome.ddd.infrastructure.cache.Redis;
