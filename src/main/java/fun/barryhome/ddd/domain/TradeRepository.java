@@ -1,4 +1,4 @@
-package fun.barryhome.ddd.infrastructure.trade;
+package fun.barryhome.ddd.domain;
 
 
 import fun.barryhome.ddd.domain.event.TradeEvent;

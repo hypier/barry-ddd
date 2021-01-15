@@ -1,4 +1,4 @@
-package fun.barryhome.ddd.infrastructure.wallet;
+package fun.barryhome.ddd.domain;
 
 import fun.barryhome.ddd.domain.model.Wallet;
 

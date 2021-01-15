@@ -1,5 +1,6 @@
 package fun.barryhome.ddd.infrastructure.wallet;
 
+import fun.barryhome.ddd.domain.WalletRepository;
 import fun.barryhome.ddd.domain.model.Wallet;
 import fun.barryhome.ddd.infrastructure.jpa.JpaWalletRepository;
 import org.springframework.stereotype.Repository;

@@ -2,7 +2,7 @@ package fun.barryhome.ddd.controller;
 
 import fun.barryhome.ddd.domain.model.Wallet;
 import fun.barryhome.ddd.infrastructure.client.AuthFeignClient;
-import fun.barryhome.ddd.infrastructure.wallet.WalletRepository;
+import fun.barryhome.ddd.domain.WalletRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
