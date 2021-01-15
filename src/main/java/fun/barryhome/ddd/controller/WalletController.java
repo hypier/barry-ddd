@@ -1,7 +1,9 @@
 package fun.barryhome.ddd.controller;
 
 import fun.barryhome.ddd.domain.model.Wallet;
+import fun.barryhome.ddd.infrastructure.client.AuthFeignClient;
 import fun.barryhome.ddd.infrastructure.wallet.WalletRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,8 +24,12 @@ public class WalletController {
         this.walletRepository = walletRepository;
     }
 
+    @Autowired
+    private AuthFeignClient authFeignClient;
+
     @PostMapping()
     public Wallet save(@RequestBody Wallet wallet) {
+        wallet.setUserId(authFeignClient.findByUserName("userName"));
         return walletRepository.save(wallet);
     }
 

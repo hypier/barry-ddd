@@ -39,6 +39,10 @@ public class Wallet extends BaseEntity {
     @Enumerated(EnumType.STRING)
     private WalletStatus walletStatus = WalletStatus.AVAILABLE;
     /**
+     * 用户Id
+     */
+    private Integer userId;
+    /**
      * 余额
      */
     private BigDecimal balance = BigDecimal.ZERO;
